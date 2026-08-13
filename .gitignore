@@ -5,3 +5,5 @@ __pycache__/
 .env
 .venv/
 *.pkl
+/SEP_analysis/sit_v9-1/
+/SEP_analysis/vcs/
