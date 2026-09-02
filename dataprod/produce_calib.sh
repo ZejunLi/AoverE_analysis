@@ -5,18 +5,25 @@ SELF_METADATA="/mnt/atlas02/users/leoli/self_metadata"
 
 DC="${SELF_METADATA}/data_cleaning.yaml"
 
-
-SMOOTHING_LIST=("300")
-MW_LIST=("1" "3" "5" "7" "15")
+SMOOTHING_LIST=("300" "500" "700")
+MW_LIST=("1" "3" "5" "7")
 # MW_LIST=("1")
 
 OUTPUT_BASE="/mnt/atlas02/users/leoli/scarf/"
 
 # Dataset list: MODE PERIOD RUN
 DATASETS=(
-    "cal p00 r037"
-    "cal p05 r057"
-)
+    "cal p00"
+    # "phy p00 r038"
+    # "cal p05 r057"
+    # "phy p05 r059"
+    'cal p01'
+    # 'cal p01 r042'
+    # 'cal p01 r044'
+    # 'cal p05 r061'
+    'cal p05'
+    # 'phy p05 r060'
+) 
 
 echo "================================"
 echo "Calibration production run."
@@ -34,24 +41,24 @@ mkdir -p "$LOGDIR"
 TIMESTAMP=$(date '+%Y-%m-%d_%H-%M-%S')
 LOGFILE="${LOGDIR}/production_log_${TIMESTAMP}.txt"
 
-echo "=== DSP production started $(date) ===" > "$LOGFILE"
+echo "=== CALIBRATION production started $(date) ===" > "$LOGFILE"
 for DATASET in "${DATASETS[@]}"; do
 
-    read -r MODE PERIOD RUN <<< "$DATASET"
+    read -r MODE PERIOD <<< "$DATASET"
     QC="/mnt/atlas01/users/vogl/scarf/sp01/metadata/hit/quality_v9-1/${PERIOD}/sp01-${PERIOD}-qc.yaml"
     echo "================================"
     echo "Dataset:"
     echo "  Mode:        $MODE"
     echo "  Period:      $PERIOD"
-    echo "  Run:         $RUN"
+    # echo "  Run:         $RUN"
     echo "  Input route: $IR"
     echo "================================"
     for S in "${SMOOTHING_LIST[@]}"; do
         for MW in "${MW_LIST[@]}"; do
             MAP="${SELF_METADATA}/vary_smoothing/maps_vcs/map_calibration_s${S}ns_mw${MW}.yaml"
-            CONF="${SELF_METADATA}/vary_smoothing/maps_vcs/ged_dsp_conf_s${S}ns_mw${MW}.yaml"
+            # CONF="${SELF_METADATA}/vary_smoothing/maps_vcs/ged_dsp_conf_s${S}ns_mw${MW}.yaml"
             OR="${OUTPUT_BASE}/metadata/calib/s${S}ns_mw${MW}"
-            RUNLOG="${LOGDIR}/${MODE}_${PERIOD}_${RUN}_s${S}ns_mw${MW}.log"
+            RUNLOG="${LOGDIR}/${MODE}_${PERIOD}_s${S}ns_mw${MW}.log"
             echo "--------------------------------"
             echo "Would run:"
             printf 'calibrate_hpge_parallel.py \\\n'
@@ -71,13 +78,13 @@ for DATASET in "${DATASETS[@]}"; do
                 -dc "$DC"\
                 -m "$MAP"\
                 -qc "$QC"\
-                -n 2\
+                -n 16\
                 > "$RUNLOG" 2>&1
             if [ $? -eq 0 ]; then
-                echo "$(date '+%F %T') SUCCESS ${MODE}/${PERIOD}/${RUN} s${S}ns_mw${MW}" \
+                echo "$(date '+%F %T') SUCCESS ${MODE}/${PERIOD}/s${S}ns_mw${MW}" \
                     >> "$LOGFILE"
             else
-                echo "$(date '+%F %T') FAILED  ${MODE}/${PERIOD}/${RUN} s${S}ns_mw${MW}" \
+                echo "$(date '+%F %T') FAILED  ${MODE}/${PERIOD}/s${S}ns_mw${MW}" \
                     >> "$LOGFILE"
             fi
 

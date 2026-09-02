@@ -6,17 +6,24 @@ SELF_METADATA="/mnt/atlas02/users/leoli/self_metadata"
 DB="${SELF_METADATA}/dsp_database_general.yaml"
 MAP="${SELF_METADATA}/map.yaml"
 
-SMOOTHING_LIST=("10" "20" "30" "40" "50")
-MW_LIST=("1" "3" "5" "7")
-
+SMOOTHING_LIST=("30")
+MW_LIST=("3")
+# SMOOTHING_LIST=("30" "40" "50" "300" "500" "700")
+# MW_LIST=("1" "3" "5" "7")
 OUTPUT_BASE="/mnt/atlas02/users/leoli/scarf/sp01/data/dsp_vcs"
 
 # Dataset list: MODE PERIOD RUN
 DATASETS=(
-    "cal p00 r037"
-    "phy p00 r038"
-    "cal p05 r057"
-    "phy p05 r059"
+    # "cal p00 r037"
+    # "phy p00 r038"
+    # "cal p05 r057"
+    # "phy p05 r059"
+    # 'cal p01 r040'
+    # 'cal p01 r042'
+    # 'cal p01 r044'
+    # 'cal p05 r061'
+    'cal p05 r064'
+    # 'phy p05 r060'
 ) 
 
 echo "================================"

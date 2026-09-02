@@ -7,19 +7,23 @@ DB="${SELF_METADATA}/dsp_database_general.yaml"
 MAP="${SELF_METADATA}/map.yaml"
 
 # SMOOTHING_LIST=("300" "500" "700" "1000" "2000")
-SMOOTHING_LIST=("300")
-MW_LIST=("1" "3" "5" "7" "15")
+SMOOTHING_LIST=("300" "500" "700")
+MW_LIST=("1" "3" "5" "7")
 
 # Dataset list: MODE PERIOD RUN
 DATASETS=(
-    "cal p00 r037"
-    "phy p00 r038"
-    "cal p05 r057"
-    "phy p05 r059"
+    # "phy p00 r038"
+    # "cal p05 r057"
+    # "phy p05 r059"
+    'cal p01 r040'
+    'cal p01 r042'
+    'cal p01 r044'
+    'cal p05 r061'
+    'phy p05 r060'
 )
 
 echo "================================"
-echo "DSP production run."
+echo "hit production run."
 echo "log summary will be saved to $LOGFILE"
 echo "================================"
 echo
@@ -51,14 +55,13 @@ for DATASET in "${DATASETS[@]}"; do
 
     for S in "${SMOOTHING_LIST[@]}"; do
         for MW in "${MW_LIST[@]}"; do
-            if [[ "$RUN" == "r038" || "$RUN" == "r037" ]]; then
-                Cal_RUN="r037"
-            elif [[ "$RUN" == "r059" || "$RUN" == "r057" ]]; then
+            if [[ "$RUN" == "r060" ]]; then
                 Cal_RUN="r057"
-            else
-                echo "Unknown RUN: $RUN" >&2
-                continue
+            else 
+                Cal_RUN="$RUN"
             fi
+
+            echo "RUN=$RUN, CAL_RUN=$CAL_RUN, S=$S, MW=$MW"
             CALIB="/mnt/atlas02/users/leoli/scarf/metadata/calib/s${S}ns_mw${MW}/cal/${PERIOD}/${Cal_RUN}/sp01-${PERIOD}-${Cal_RUN}-cal-hpge-calib.yaml"
             RUNLOG="${LOGDIR}/${Datatype}_${PERIOD}_${RUN}_s${S}ns_mw${MW}.log"
             MAP="${SELF_METADATA}/vary_smoothing/maps_vcs/map_calibration_s${S}ns_mw${MW}.yaml"
@@ -82,7 +85,7 @@ for DATASET in "${DATASETS[@]}"; do
 
             cmd+=(
                 -qc "$QC"
-                -n 2
+                -n 4
             )
 
             echo "--------------------------------"
