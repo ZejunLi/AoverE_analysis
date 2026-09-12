@@ -3,15 +3,15 @@ n_sb: 99064
 n_b_ext: 1684
 n_sb_s: 2005
 n_b_ext_s: 392
-n_he_sb: 64798
-n_he_sb_s: 412
-he_scaling: 4.5900559529711735
-name: bare_aoe_ic
+n_he_sb: 2551
+n_he_sb_s: 63
+he_scaling: 4.4
+name: bare_aoe_ic_s40ns_mw7_and_s300ns_mw7
 range_lower: 0.0
 range_upper: 0.01
 sample_size: 1000
 measurement_type: same
-para_sample_size: 100
+para_sample_size: 1000
 lamb: 4.355892229333596
 eps_qcm_sb_uc:
   val: 0.995139183269747

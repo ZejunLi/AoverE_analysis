@@ -3,10 +3,10 @@ n_sb: 99064
 n_b_ext: 1684
 n_sb_s: 2920
 n_b_ext_s: 564
-n_he_sb: 64798
-n_he_sb_s: 795
-he_scaling: 4.5900559529711735
-name: bare_aoe_ic
+n_he_sb: 2551
+n_he_sb_s: 97
+he_scaling: 4.4
+name: bare_aoe_ic_s300ns_mw7
 range_lower: 0.0
 range_upper: 0.01
 sample_size: 1000
