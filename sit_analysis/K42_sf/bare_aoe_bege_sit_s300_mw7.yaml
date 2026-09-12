@@ -5,11 +5,11 @@ n_sb_s: 58849
 n_b_ext_s: 578
 n_he_sb: 0
 n_he_sb_s: 0
-he_scaling: 4.5900559529711735
+he_scaling: 4.0
 name: bare_aoe_ic
 range_lower: 0.0
 range_upper: 0.01
-sample_size: 1000
+sample_size: 100
 measurement_type: same
 para_sample_size: 100
 lamb: 4.355892229333596
