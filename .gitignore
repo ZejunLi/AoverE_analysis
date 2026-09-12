@@ -7,4 +7,4 @@ __pycache__/
 *.pkl
 /SEP_analysis/sit_v9-1/
 /SEP_analysis/vcs/
-.lh5
+*.lh5
