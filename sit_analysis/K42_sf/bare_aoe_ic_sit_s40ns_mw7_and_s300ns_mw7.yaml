@@ -11,7 +11,7 @@ range_lower: 0.0
 range_upper: 0.01
 sample_size: 1000
 measurement_type: same
-para_sample_size: 1000
+para_sample_size: 100
 lamb: 4.355892229333596
 eps_qcm_sb_uc:
   val: 0.995139183269747

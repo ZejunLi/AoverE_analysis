@@ -9,7 +9,7 @@ he_scaling: 4.4
 name: bare_aoe_ic_s500ns_mw5
 range_lower: 0.0
 range_upper: 0.01
-sample_size: 100
+sample_size: 1000
 measurement_type: same
 para_sample_size: 100
 lamb: 4.355892229333596

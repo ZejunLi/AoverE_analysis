@@ -1,15 +1,15 @@
-comment: Applied A/E<3 and Iasy<0 to initial event selection for BEGe
-n_sb: 127960
-n_b_ext: 1074
-n_sb_s: 61020
-n_b_ext_s: 598
-n_he_sb: 1457
-n_he_sb_s: 227
-he_scaling: 4.0
-name: bare_aoe_bege_s300ns_mw7
-range_lower: 0.4
-range_upper: 0.6
-sample_size: 100
+comment: Applied A/E<3 and Iasy<0 to initial event selection for ICaro
+n_sb: 99064
+n_b_ext: 1684
+n_sb_s: 1920
+n_b_ext_s: 398
+n_he_sb: 2551
+n_he_sb_s: 0
+he_scaling: 4.4
+name: bare_aoe_ic_s60ns_mw3_and_s500ns_mw3
+range_lower: 0.0
+range_upper: 0.01
+sample_size: 1000
 measurement_type: same
 para_sample_size: 100
 lamb: 4.355892229333596

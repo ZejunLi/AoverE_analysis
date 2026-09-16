@@ -6,12 +6,12 @@ n_b_ext_s: 394
 n_he_sb: 2551
 n_he_sb_s: 0
 he_scaling: 4.4
-name: bare_aoe_ic_s40ns_mw7_and_s500ns_mw3
+name: bare_aoe_ic_s40ns_mw7_and_s500ns_mw3_pre
 range_lower: 0.0
 range_upper: 0.01
 sample_size: 1000
 measurement_type: same
-para_sample_size: 1000
+para_sample_size: 100
 lamb: 4.355892229333596
 eps_qcm_sb_uc:
   val: 0.995139183269747
