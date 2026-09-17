@@ -1,0 +1,36 @@
+comment: Applied A/E<3 and Iasy<0 to initial event selection for BEGe
+n_sb: 127960
+n_b_ext: 1074
+n_sb_s: 61020
+n_b_ext_s: 598
+n_he_sb: 1457
+n_he_sb_s: 227
+he_scaling: 4.0
+name: bare_aoe_bege_s300ns_mw7
+range_lower: 0.4
+range_upper: 0.6
+sample_size: 100
+measurement_type: same
+para_sample_size: 100
+lamb: 4.355892229333596
+eps_qcm_sb_uc:
+  val: 0.995139183269747
+  unc: 0.00036973191220169356
+eps_qcm_b_uc:
+  val: 0.9934527486102532
+  unc: 0.00044819261254816484
+eps_qcm_sb_mu:
+  val: 0.03585071995298266
+  unc: 0.003187059025835067
+eps_qcm_b_mu:
+  val: 0.02942258183155572
+  unc: 0.0032407899040023344
+eps_lar_sb:
+  val: 1.0
+  unc: 1.0e-06
+eps_lar_b:
+  val: 1.0
+  unc: 1.0e-06
+constants:
+- he_scaling
+- lamb
