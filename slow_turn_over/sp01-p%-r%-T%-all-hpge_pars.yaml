@@ -1,0 +1,44 @@
+ch001:
+  en_avg_samples: 300
+  n_upsampler_lf: 40
+  leg_len: 10000
+  t_amax_offset: 0
+  n_leg_polyn: 25
+  leg_n_coeffs: 51
+  jitter_delta: 50
+  t_fit_low: 100
+  t_fit_high: 10000
+  t_plot_offset: -5000
+  rcond: 1e-12
+
+  bl_start: 15000
+  null_template_len: 50000
+  null_pre_tamax_len: 20000
+
+  # front end electronics
+  tau_fast: 42*ns
+  tau_slow: 535*ns
+  fe_frac: 0.030
+
+
+ch002:
+  en_avg_samples: 300
+  n_upsampler_lf: 40
+  leg_len: 10000
+  t_amax_offset: 0
+  n_leg_polyn: 50
+  leg_n_coeffs: 51
+  jitter_delta: 50
+  t_fit_low: 100
+  t_fit_high: 10000
+  t_plot_offset: -5000
+  rcond: 1e-12
+
+  bl_start: 15000
+  null_template_len: 50000
+  null_pre_tamax_len: 20000
+
+  # front end electronics
+  tau_fast: 40*ns
+  tau_slow: 807*ns
+  fe_frac: 0.020
